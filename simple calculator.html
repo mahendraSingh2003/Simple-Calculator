@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <style>
+    .container{   
+            background-color:aliceblue;
+            width: 263px;
+            height: 263px;
+            border: 5px solid #ccc;
+            border-radius: 7px;
+            
+        }
+    body{
+        margin-top: 43px;
+        background-color:rgb(162, 167, 199);
+        display: flex;
+        justify-content: center;
+      
+    }
+    #display{
+        width: 200px;
+        padding: 7px;
+        border: 2px solid  rgb(116, 112, 115);
+        border-radius:7px;
+        margin:20px 1px 6px 20px;
+    }
+   .btn {
+     width: 33px;
+     height: 33px;
+     border-radius: 4px;
+     cursor: pointer;
+    }
+    .inputbox{
+        margin-top: 8px;
+        gap: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #option{
+        background-color: #1d2c57;
+        color: aliceblue;
+    }
+    #cl{
+        background-color: rgb(145, 125, 125);
+    }
+    h1{
+        color: rgb(62, 64, 102);
+        margin-left: -30px;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+  
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="head"><h1>SIMPLE  CALCULATOR </h1></div>
+    <div class="container">
+        <div class="display">
+         <input type="text"  id="display" placeholder="Type a Math problem">
+        </div>
+        <div class="inputbox">
+            <input type="button" value="1" class="btn" onclick="add('1')">
+            <input type="button" value="2" class="btn" onclick="add('2')">
+            <input type="button" value="3" class="btn" onclick="add('3')">
+            <input type="button" value="sqrt" class="btn" id="option" onclick="squareRoot()">
+            <input type="button" value="+" class="btn" id="option" onclick="add('+')">
+        </div>
+        <div class="inputbox">
+            <input type="button" value="4" class="btn" onclick="add('4')">
+            <input type="button" value="5" class="btn" onclick="add('5')">
+            <input type="button" value="6" class="btn" onclick="add('6')">
+            <input type="button" value="^" class="btn" id="option" onclick="add('^')">       
+            <input type="button" value="-" class="btn" id="option" onclick="add('-')">
+        </div>
+        <div class="inputbox">
+            <input type="button" value="7" class="btn" onclick="add('7')">
+            <input type="button" value="8" class="btn" onclick="add('8')">
+            <input type="button" value="9" class="btn" onclick="add('9')">
+            <input type="button" value="%" class="btn" id="option" onclick="add('%')">
+            <input type="button" value="*" class="btn" id="option" onclick="add('*')">
+        </div>
+        <div class="inputbox">
+            <input type="button" value="Cl" class="btn" id="cl" onclick="cleardisplay()">
+            <input type="button" value="0" class="btn" onclick="add('0')">
+            <input type="button" value="." class="btn" onclick="add('.')">
+            <input type="button" value="=" class="btn" id="option" onclick="calculate()">
+            <input type="button" value="/" class="btn" id="option" onclick="add('/')">
+        </div>
+    </div>
+</div>
+    <script>
+        function add(value){ 
+        document.getElementById('display').value+=value;
+        }
+     function cleardisplay(){
+            document.getElementById('display').value="";
+        }
+function  calculate(){
+    var exp=document.getElementById('display').value;
+    if(exp.match(/\^+/)){
+      exp=exp.replaceAll("^","**");
+    }
+    var result=eval(exp);
+    document.getElementById('display').value=result;
+}
+function squareRoot(){
+        var exp = document.getElementById('display').value;
+        var result = Math.sqrt(parseFloat(exp));
+        document.getElementById('display').value = result;
+    }
+    </script>
+</body>
+</html>
