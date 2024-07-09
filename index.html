@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <link rel="stylesheet" href="./Style.css">
+</head>
+<body>
+    <div class="main">
+    <div class="head"><h1>SIMPLE  CALCULATOR </h1></div>
+    <div class="container">
+        <div class="display">
+         <input type="text"  id="display" placeholder="Type a Math problem">
+        </div>
+        <div class="inputbox">
+            <input type="button" value="1" class="btn" onclick="add('1')">
+            <input type="button" value="2" class="btn" onclick="add('2')">
+            <input type="button" value="3" class="btn" onclick="add('3')">
+            <input type="button" value="sqrt" class="btn" id="option" onclick="squareRoot()">
+            <input type="button" value="+" class="btn" id="option" onclick="add('+')">
+        </div>
+        <div class="inputbox">
+            <input type="button" value="4" class="btn" onclick="add('4')">
+            <input type="button" value="5" class="btn" onclick="add('5')">
+            <input type="button" value="6" class="btn" onclick="add('6')">
+            <input type="button" value="^" class="btn" id="option" onclick="add('^')">       
+            <input type="button" value="-" class="btn" id="option" onclick="add('-')">
+        </div>
+        <div class="inputbox">
+            <input type="button" value="7" class="btn" onclick="add('7')">
+            <input type="button" value="8" class="btn" onclick="add('8')">
+            <input type="button" value="9" class="btn" onclick="add('9')">
+            <input type="button" value="%" class="btn" id="option" onclick="add('%')">
+            <input type="button" value="*" class="btn" id="option" onclick="add('*')">
+        </div>
+        <div class="inputbox">
+            <input type="button" value="Cl" class="btn" id="cl" onclick="cleardisplay()">
+            <input type="button" value="0" class="btn" onclick="add('0')">
+            <input type="button" value="." class="btn" onclick="add('.')">
+            <input type="button" value="=" class="btn" id="option" onclick="calculate()">
+            <input type="button" value="/" class="btn" id="option" onclick="add('/')">
+        </div>
+    </div>
+</div>
+    <script src="./script.js"></script>
+</body>
+</html>
